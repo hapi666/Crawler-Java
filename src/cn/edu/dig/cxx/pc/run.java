@@ -1,12 +1,22 @@
 package cn.edu.dig.cxx.pc;
 
+import java.awt.TextArea;
+import java.net.MalformedURLException;
+
 public class run {
 
 	public static void main(String[] args) {
-		String s = crawler.Get("http://www.jianshu.com/", "");
+		crawler a = new crawler();
+		String[] head = new String[1000];
+		head = null;
+		String s = null;
+		try {
+			s = a.Net_Get("http://192.168.2.141:8080/16Pf", "username=123&&num=123", head);
+		} catch (MalformedURLException e) {
+			// TODO 自动生成的 catch 块
+			e.printStackTrace();
+		}
 		System.out.println(s);
-		String ss = crawler.Get("http://www.cxx666.xyz/", "iclass=161*****&idcard=******************&phone=176456123&message=123");
-		System.out.println(ss);
+		a.daili("http://www.baidu.com");
 	}
-
 }
